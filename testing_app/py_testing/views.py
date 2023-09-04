@@ -7,7 +7,8 @@ menu = ['Про сайт', 'Пройти тест', 'Зворотній звяз
 
 def index(request):
     topic = Topic.objects.all()
-    return render(request, 'py_testing/index.html', {'topic': topic,'menu': menu, 'title': 'Головна сторінка'})
+    question = Question.objects.all()
+    return render(request, 'py_testing/index.html', {'topic': topic,'question': question,'menu': menu, 'title': 'Головна сторінка'})
 
 
 def about(request):

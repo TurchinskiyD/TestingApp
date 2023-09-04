@@ -1,15 +1,13 @@
 {% extends 'py_testing/base.html' %}
 
 {% block content %}
-<h1>{{title}}</h1>
-
-<ul>
-    {% for t in topic %}
-    <li>
-        <h2>{{t.title}}</h2>
-        <hr>
-    </li>
+<ul class="list-articles">
+    {% for q in question %}
+        <h3>{{ q.topic }}</h3>
+        <li>{{ q.text|truncatewords:6 }}</li>
+        <p class="link-read-post"><a href="#">Почати тест</a> </p>
+        <div class="clear"></div>
+        </li>
     {% endfor %}
 </ul>
-
 {% endblock %}

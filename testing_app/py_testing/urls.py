@@ -5,7 +5,10 @@ from .views import *
 urlpatterns = [
     path('', index, name='home'),
     path('about/', about, name='about'),
-    path('cats/<int:catid>/', categories),
-    re_path(r'^archive/(?P<year>[0-9]{4})/', archive),
+    path('runtest/', runtest, name='runtest'),
+    path('contact/', contact, name='contact'),
+    path('login/', login, name='login'),
+    path('question/<int:ques_id>/', show_question_info, name='question'),
+    path('category/<int:cat_id>/', show_category, name='category'),
 
 ]

@@ -3,10 +3,12 @@
 {% block content %}
 <ul class="list-articles">
     {% for q in question %}
-        <h3>{{ q.topic }}</h3>
-        <li>{{ q.text|truncatewords:6 }}</li>
-        <p class="link-read-post"><a href="#">Почати тест</a> </p>
-        <div class="clear"></div>
+    <li><div class="article-panel">
+        <p class="first">Категорія: {{q.topic}}</p>
+    </div>
+        {{ q.text|linebreaks|truncatewords:6 }}
+            <div class="clear"></div>
+            <p class="link-read-post"><a href="{{ q.get_absolute_url }}">Читати докладніше</a> </p>
         </li>
     {% endfor %}
 </ul>
